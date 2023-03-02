@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: aquamarine;
+  font-family: "Arial";
+}
+
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100;
+}
+
+th, td {
+  padding: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.container {
+  padding: 10px;
+  background-color: aquamarine;
+}
+
+#name {
+  width: 200px;
+  height: 20px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 6px;
+}
+
+#number {
+  width: 200px;
+  height: 20px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 6px;
+}
+
+/*# sourceMappingURL=phonebook.component.css.map */

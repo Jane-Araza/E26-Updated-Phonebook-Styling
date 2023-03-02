@@ -1,0 +1,46 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<div class="container d-flex justify-content-center">
+<div >
+    <h1>Phonebook</h1><br>
+
+   
+    <label>
+        <b>Name: </b>
+    </label>
+        <input type="text" placeholder="Enter Full Name" id="name" name="name" [(ngModel)]="newContactName" required><br><br>
+    <label>
+        <b>Phone Number: </b>
+    </label>
+        <input type="text" placeholder="Enter Phone" id="number" name = "number" [(ngModel)]="newContactNumber" required><br><br>
+    
+   
+        <button type="button" class="btn btn-primary" (click)="addContact()">Save</button>
+    </div>
+</div>
+
+<div class="wrapper" *ngIf = "updateContactDetails">
+    <input type="text" name="name" [(ngModel)]="updateContactDetails.name">
+    <input type="text" name ="number" [(ngModel)]="updateContactDetails.number">
+</div>
+
+<div class="container d-flex justify-content-center">
+    <table>
+      <tr>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+      </tr>
+      <tr *ngFor = "let contact of contacts; let i=index">
+          <td>{{contact.name}}</td>
+          <td>{{contact.number}}</td>
+          <td> 
+              <span><button type="button" [class.selected] = "contact === updateContactDetails"
+                (click)="updateContact(contact)" >Edit</button></span>
+              <span><button (click)="deleteContact(i)">Delete</button></span>
+          </td>
+      </tr>
+
+    </table>
+</div>
